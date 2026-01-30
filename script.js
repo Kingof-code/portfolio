@@ -1,48 +1,41 @@
-//For toggle Menu
-function toggleMenu() {
-    const navbar = document.getElementById("mobileMenu");
-    if (navbar.style.transform === "translateY(0px)") {
-        navbar.style.transform = "translateY(-500px)";
-    } else {
-        navbar.style.transform = "translateY(0px)";
-    }
-}
-
-// For Close the menu when clicking outside
-document.addEventListener("click", function(event) {
-    const menu = document.getElementById("mobileMenu");
-    const menuButton = document.querySelector(".hamburg");
-
-    if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
-        menu.style.transform = "translateY(-500px)";
-    }
+AOS.init({
+  duration:1200,
+  once:true
 });
 
-// For Preloader
-// Wait until page fully loads
+/* MENU */
+const menu = document.getElementById("mobileMenu");
+const openBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeMenu");
+
+openBtn.onclick = () => menu.classList.add("active");
+closeBtn.onclick = () => menu.classList.remove("active");
+
+menu.querySelectorAll("a").forEach(link=>{
+  link.onclick = ()=>menu.classList.remove("active");
+});
+
+/* DARK MODE */
+const toggle = document.getElementById("themeToggle");
+toggle.onclick = ()=>{
+  document.body.classList.toggle("dark");
+  toggle.classList.toggle("fa-sun");
+  toggle.classList.toggle("fa-moon");
+};
+
+/* PAGE LOADER + SKELETON */
 window.addEventListener("load", () => {
-  const pageLoader = document.getElementById("page-loader");
-  const skeleton = document.getElementById("skeleton-loader");
-  const content = document.getElementById("main-content");
+  const loader = document.getElementById("page-loader");      // full screen spinner
+  const skeleton = document.getElementById("skeleton-loader"); // skeleton UI
+  const mainContent = document.getElementById("main-container"); // real content
 
-  // Step 1: Hide full loader
-  pageLoader.style.display = "none";
-
-  // Step 2: Show skeleton
+  // hide spinner, show skeleton
+  loader.style.display = "none";
   skeleton.style.display = "block";
 
-  // Step 3: After skeleton delay, show content
+  // simulate loading time
   setTimeout(() => {
-    skeleton.style.display = "none";
-    content.style.display = "block";
-    AOS.refresh();
-  }, 1800); // professional delay
+    skeleton.style.display = "none";  // hide skeleton
+    mainContent.style.display = "block"; // show actual content
+  }, 2000); // 2.2 seconds, adjust if needed
 });
-
-
-AOS.init({
-        duration: 1000,
-        offset: 0,
-        once: true,
-        anchorPlacement: 'bottom-bottom'
-    });

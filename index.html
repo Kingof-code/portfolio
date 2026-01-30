@@ -1,251 +1,275 @@
-<!DOCTYPE html>
-<html lang="en">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>Portfolio(Sathishkumar.V)</title>
-</head>
 
-<body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <span>Portfolio</span>
-            </div>
-            <div class="links" id="navLinks">
-                <div class="link"><a href="#home">Home</a></div>
-                <div class="link"><a href="#about">About</a></div>
-                <div class="link"><a href="#skills">Skills</a></div>
-                <div class="link"><a href="#services">Project</a></div>
-                <div class="link"><a href="#contact">Contact</a></div>
-            </div>
 
-            <i class="fa-solid fa-bars hamburg" onclick="toggleMenu()"></i>
-        </div>
-        <div class="dropdown" id="mobileMenu">
-            <div class="links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#services">Project</a>
-                <a href="#contact">Contact Me</a>
-                <i class="fa-solid fa-xmark cancel" onclick="toggleMenu()"></i>
-            </div>
-        </div>
-    </nav>
 
-    <div id="preloader" class="loading">
-        <div class="pencil">
-            <div class="pencil__ball-point"></div>
-            <div class="pencil__cap"></div>
-            <div class="pencil__cap-base"></div>
-            <div class="pencil__middle"></div>
-            <div class="pencil__eraser"></div>
-        </div>
-        <div class="line"></div>
-        <h2>Page Loading... Please Wait</h2>
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <span>Portfolio</span>
+    </div>
+    <div class="links" id="navLinks">
+      <div class="link"><a href="#home">Home</a></div>
+      <div class="link"><a href="#about">About</a></div>
+      <div class="link"><a href="#skills">Skills</a></div>
+      <div class="link"><a href="#services">Project</a></div>
+      <div class="link"><a href="#contact">Contact</a></div>
     </div>
 
-    <section id="home">
-        <br>
-        <div class="main-container">
-            <div class="image">
-                <img src="main.png" data-aos="zoom-in-up" alt="Profile Picture">
-            </div>
-            <div class="content">
-                <h1 data-aos="fade-left">Hey, I'm
-                    <span>Sathishkumar.V</span>
-                </h1>
-                <div data-aos="fade-left">I'm a
-                    <span>Full Stack Developer</span>
-                </div>
-                <p data-aos="fade-left">Passionate about web development and MERN stack.</p>
-                <div class="social-links" data-aos="fade-up">
-                    <a href="https://github.com/Kingof-code"><i class="fa-brands fa-github"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://x.com/Sathishkumar_58"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-                <a class="btn" href="Sathishkumar Resume.pdf" download>
-                    <button data-aos="fade-up">Download Resume</button>
-                </a>
-            </div>
-        </div>
-    </section>
+    <i class="fa-solid fa-bars hamburg" onclick="toggleMenu()"></i>
+  </div>
+  <div class="dropdown" id="mobileMenu">
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#services">Project</a>
+      <a href="#contact">Contact Me</a>
+      <i class="fa-solid fa-xmark cancel" onclick="toggleMenu()"></i>
+    </div>
+  </div>
+</nav>
 
-    <section id="about" class="about-section">
-        <h1 data-aos="slide-left">About Me</h1>
+<!-- FULL PAGE LOADER -->
+<div id="page-loader">
+  <div class="loader-box">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
+</div>
 
-        <div class="about-content">
-            <div class="about-image" data-aos="zoom-in-up">
-                <img src="images/professional.jpg" alt="Sathishkumar Profile">
-            </div>
-            <div class="content" data-aos="fade-left">
-                <p>Hello! I'm <span>Sathishkumar.V</span>, a passionate Full Stack Developer specializing in MERN Stack.
-                    <br> I love building scalable web applications and solving real-world problems with code.
-                </p>
-                <p>Currently pursuing B.E CSE at <span>R P Sarathi Institute of Technology</span>.</p>
-                <p>I started with no knowledge at all, but now I have completed my studies while also attending online classes and certification courses. I have earned many certificates in HTML, CSS, JavaScript, Python, and more. 😊🎓</p>
-                <a class="btn" href="Sathishkumar Resume.pdf"><button>Download Resume</button></a>
-            </div>
-        </div>
-    </section>
+<!-- SKELETON LOADER -->
+<div id="skeleton-loader">
 
-    <section id="skills" class="skills">
-        <br>
-        <br>
-        <br>
-        <h1 data-aos="slide-left">My Skills</h1>
-        <h3 data-aos="fade-left">Frontend Development</h3>
-        <div class="skill-category" data-aos="zoom-in-up">
-            <div class="skill">
-                <img src="icons/html.png" alt="HTML">
-                <p>HTML</p>
-            </div>
-            <div class="skill">
-                <img src="icons/css.png" alt="CSS">
-                <p>CSS</p>
-            </div>
-            <div class="skill">
-                <img src="icons/java-script.png" alt="JavaScript">
-                <p>JavaScript</p>
-            </div>
-            <div class="skill">
-                <img src="icons/react js.png" alt="React">
-                <p>React.js</p>
-            </div>
-        </div>
+  <!-- NAV -->
+  <div class="sk-nav"></div>
 
-        <h3 data-aos="fade-left">Backend Development</h3>
-        <div class="skill-category" data-aos="zoom-in-up">
-            <div class="skill">
-                <img src="icons/node js.png" alt="Node.js">
-                <p>Node.js</p>
-            </div>
-            <div class="skill">
-                <img src="icons/express js.png" alt="Express.js">
-                <p>Express.js</p>
-            </div>
-        </div>
+  <!-- HOME -->
+  <div class="sk-home">
+    <div class="sk-img"></div>
+    <div class="sk-text">
+      <div class="sk-line big"></div>
+      <div class="sk-line medium"></div>
+      <div class="sk-line small"></div>
+    </div>
+  </div>
 
-        <h3 data-aos="fade-left">Databases</h3>
-        <div class="skill-category" data-aos="zoom-in-up">
-            <div class="skill">
-                <img src="icons/mongo db.png" alt="MongoDB">
-                <p>MongoDB</p>
-            </div>
-            <div class="skill">
-                <img src="icons/mysql.png" alt="MySQL">
-                <p>MySQL</p>
-            </div>
-        </div>
+  <!-- SKILLS -->
+  <div class="sk-section">
+    <div class="sk-line title"></div>
+    <div class="sk-cards">
+      <div class="sk-card"></div>
+      <div class="sk-card"></div>
+      <div class="sk-card"></div>
+      <div class="sk-card"></div>
+    </div>
+  </div>
 
-        <h3 data-aos="fade-left">Other Tools</h3>
-        <div class="skill-category" data-aos="zoom-in-up">
-            <div class="skill">
-                <img src="icons/git.png" alt="Git">
-                <p>Git</p>
-            </div>
-            <div class="skill">
-                <img src="icons/github.png" alt="github">
-                <p>github</p>
-            </div>
-            <div class="skill">
-                <img src="icons/vs code.png" alt="VS Code">
-                <p>VS Code</p>
-            </div>
+  <!-- PROJECTS -->
+  <div class="sk-section">
+    <div class="sk-line title"></div>
+    <div class="sk-cards">
+      <div class="sk-project"></div>
+      <div class="sk-project"></div>
+      <div class="sk-project"></div>
+    </div>
+  </div>
 
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <br>
-        <br>
-        <br>
-        <h1 data-aos="slide-left">Project</h1>
-        <div class="projects" data-aos="zoom-in-up">
-            <div class="project-card">
-                <h3>Profile</h3>
-                <p>Checkout my profile.<br>This is my first html page</p>
-                <a href="https://kingof-code.github.io/Profile/" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>Portfolio</h3>
-                <p>A simple portfolio using html,css and JavaScript</p>
-                <a href="https://kingof-code.github.io/my-portfolio/" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>Chikken Shop Website</h3>
-                <p>On going project</p>
-                <a href="https://kingof-code.github.io/Chikken-Shop/" target="_blank">View Project</a>
-            </div>
-        </div>
-
-        <h1 data-aos="slide-left">Services</h1>
-        <div class="service" data-aos="zoom-in-up">
-            <div class="service-card">
-                <h3>Web Development</h3>
-                <p>Building responsive and high-performance websites using modern technologies like HTML, CSS, JavaScript, and React.js.</p>
-            </div>
-            <div class="service-card">
-                <h3>Full Stack Development</h3>
-                <p>Developing end-to-end applications with MERN stack (MongoDB, Express.js, React.js, Node.js).</p>
-            </div>
-            <div class="service-card">
-                <h3>Database Management</h3>
-                <p>Designing and managing databases with SQL (MySQL) and NoSQL (MongoDB).</p>
-            </div>
-            <div class="service-card">
-                <h3>API Development</h3>
-                <p>Creating robust RESTful APIs using Node.js and Express.js for seamless data communication.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <br>
-        <h2 data-aos="slide-left">Contact with Email</h2>
-
-        <form action="mailto:sathishkumar6381306372@gmail.com" method="post" enctype="text/plain" data-aos="fade-left">
-            <input type="text" name="name" placeholder="Your Name" required><br>
-            <input type="email" name="email" placeholder="Your Email" required><br>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea><br>
-            <button type="submit">Send Message</button>
-        </form>
-
-        <h3 data-aos="slide-left">Others Ways to contact Me</h3>
-
-        <div class="social-links" data-aos="flip-down">
-            <a href="https://wa.me/6381306372" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://github.com/Kingof-code"><i class="fa-brands fa-github"></i></a>
-        </div>
-
-    </section>
-
-    <footer>
-        <footer>
-            <p>© 2025 V. Sathishkumar | All Rights Reserved</p>
-            <p>Made with <span class="heart">❤</span> by <strong>Sathishkumar</strong></p>
-        </footer>
-    </footer>
-
-</body>
-
-<script>
-    AOS.init({
-        duration: 1000,
-        offset: 0,
-        once: true,
-        anchorPlacement: 'bottom-bottom'
-    });
-</script>
+</div>
 
 
-</html>
+<!-- MAIN WEBSITE CONTENT -->
+<div id="main-content">
+  <!-- 🔥 ALL YOUR EXISTING WEBSITE CODE GOES HERE 🔥 -->
+</div>
+
+
+<section id="home">
+  <br>
+  <div class="main-container">
+    <div class="image">
+      <img src="main.png" data-aos="zoom-in-up" alt="Profile Picture">
+    </div>
+    <div class="content">
+      <h1 data-aos="fade-left">Hey, I'm
+        <span>Sathishkumar.V</span>
+      </h1>
+      <div data-aos="fade-left">I'm a
+        <span>Full Stack Developer</span>
+      </div>
+      <p data-aos="fade-left">Passionate about web development and MERN stack.</p>
+      <div class="social-links" data-aos="fade-up">
+        <a href="https://github.com/Kingof-code"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://x.com/Sathishkumar_58"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <a class="btn" href="Sathishkumar Resume.pdf" download>
+        <button data-aos="fade-up">Download Resume</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about-section">
+  <h1 data-aos="slide-left">About Me</h1>
+
+  <div class="about-content">
+    <div class="about-image" data-aos="zoom-in-up">
+      <img src="images/professional.jpg" alt="Sathishkumar Profile">
+    </div>
+    <div class="content" data-aos="fade-left">
+      <p>Hello! I'm <span>Sathishkumar.V</span>, a passionate Full Stack Developer specializing in MERN Stack.
+        <br> I love building scalable web applications and solving real-world problems with code.
+      </p>
+      <p>Currently pursuing B.E CSE at <span>R P Sarathi Institute of Technology</span>.</p>
+      <p>I started with no knowledge at all, but now I have completed my studies while also attending online classes and
+        certification courses. I have earned many certificates in HTML, CSS, JavaScript, Python, and more. 😊🎓</p>
+      <a class="btn" href="Sathishkumar Resume.pdf"><button>Download Resume</button></a>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills">
+  <br>
+  <br>
+  <br>
+  <h1 data-aos="slide-left">My Skills</h1>
+  <h3 data-aos="fade-left">Frontend Development</h3>
+  <div class="skill-category" data-aos="zoom-in-up">
+    <div class="skill">
+      <img src="icons/html.png" alt="HTML">
+      <p>HTML</p>
+    </div>
+    <div class="skill">
+      <img src="icons/css.png" alt="CSS">
+      <p>CSS</p>
+    </div>
+    <div class="skill">
+      <img src="icons/java-script.png" alt="JavaScript">
+      <p>JavaScript</p>
+    </div>
+    <div class="skill">
+      <img src="icons/react js.png" alt="React">
+      <p>React.js</p>
+    </div>
+  </div>
+
+  <h3 data-aos="fade-left">Backend Development</h3>
+  <div class="skill-category" data-aos="zoom-in-up">
+    <div class="skill">
+      <img src="icons/node js.png" alt="Node.js">
+      <p>Node.js</p>
+    </div>
+    <div class="skill">
+      <img src="icons/express js.png" alt="Express.js">
+      <p>Express.js</p>
+    </div>
+  </div>
+
+  <h3 data-aos="fade-left">Databases</h3>
+  <div class="skill-category" data-aos="zoom-in-up">
+    <div class="skill">
+      <img src="icons/mongo db.png" alt="MongoDB">
+      <p>MongoDB</p>
+    </div>
+    <div class="skill">
+      <img src="icons/mysql.png" alt="MySQL">
+      <p>MySQL</p>
+    </div>
+  </div>
+
+  <h3 data-aos="fade-left">Other Tools</h3>
+  <div class="skill-category" data-aos="zoom-in-up">
+    <div class="skill">
+      <img src="icons/git.png" alt="Git">
+      <p>Git</p>
+    </div>
+    <div class="skill">
+      <img src="icons/github.png" alt="github">
+      <p>github</p>
+    </div>
+    <div class="skill">
+      <img src="icons/vs code.png" alt="VS Code">
+      <p>VS Code</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="services" class="services">
+  <br>
+  <br>
+  <br>
+  <h1 data-aos="slide-left">Project</h1>
+  <div class="projects" data-aos="zoom-in-up">
+    <div class="project-card">
+      <h3>Profile</h3>
+      <p>Checkout my profile.<br>This is my first html page</p>
+      <a href="https://kingof-code.github.io/Profile/" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Portfolio</h3>
+      <p>A simple portfolio using html,css and JavaScript</p>
+      <a href="https://kingof-code.github.io/my-portfolio/" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Chikken Shop Website</h3>
+      <p>On going project</p>
+      <a href="https://kingof-code.github.io/Chikken-Shop/" target="_blank">View Project</a>
+    </div>
+  </div>
+
+  <h1 data-aos="slide-left">Services</h1>
+  <div class="service" data-aos="zoom-in-up">
+    <div class="service-card">
+      <h3>Web Development</h3>
+      <p>Building responsive and high-performance websites using modern technologies like HTML, CSS, JavaScript, and
+        React.js.</p>
+    </div>
+    <div class="service-card">
+      <h3>Full Stack Development</h3>
+      <p>Developing end-to-end applications with MERN stack (MongoDB, Express.js, React.js, Node.js).</p>
+    </div>
+    <div class="service-card">
+      <h3>Database Management</h3>
+      <p>Designing and managing databases with SQL (MySQL) and NoSQL (MongoDB).</p>
+    </div>
+    <div class="service-card">
+      <h3>API Development</h3>
+      <p>Creating robust RESTful APIs using Node.js and Express.js for seamless data communication.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <br>
+  <h2 data-aos="slide-left">Contact with Email</h2>
+
+  <form action="mailto:sathishkumar6381306372@gmail.com" method="post" enctype="text/plain" data-aos="fade-left">
+    <input type="text" name="name" placeholder="Your Name" required><br>
+    <input type="email" name="email" placeholder="Your Email" required><br>
+    <textarea name="message" placeholder="Your Message" rows="4" required></textarea><br>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <h3 data-aos="slide-left">Others Ways to contact Me</h3>
+
+  <div class="social-links" data-aos="flip-down">
+    <a href="https://wa.me/6381306372" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://github.com/Kingof-code"><i class="fa-brands fa-github"></i></a>
+  </div>
+
+</section>
+
+<footer>
+  <footer>
+    <p>© 2025 V. Sathishkumar | All Rights Reserved</p>
+    <p>Made with <span class="heart">❤</span> by <strong>Sathishkumar</strong></p>
+  </footer>
+</footer>

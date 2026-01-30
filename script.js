@@ -20,8 +20,29 @@ document.addEventListener("click", function(event) {
 
 // For Preloader
 // Wait until page fully loads
-window.addEventListener("load", function() {
-    let preloader = document.getElementById("preloader");
-    preloader.style.display = "none"; // Hide preloader
-    document.querySelector(".content").style.display = "block"; // Show content
+window.addEventListener("load", () => {
+  const pageLoader = document.getElementById("page-loader");
+  const skeleton = document.getElementById("skeleton-loader");
+  const content = document.getElementById("main-content");
+
+  // Step 1: Hide full loader
+  pageLoader.style.display = "none";
+
+  // Step 2: Show skeleton
+  skeleton.style.display = "block";
+
+  // Step 3: After skeleton delay, show content
+  setTimeout(() => {
+    skeleton.style.display = "none";
+    content.style.display = "block";
+    AOS.refresh();
+  }, 1800); // professional delay
 });
+
+
+AOS.init({
+        duration: 1000,
+        offset: 0,
+        once: true,
+        anchorPlacement: 'bottom-bottom'
+    });

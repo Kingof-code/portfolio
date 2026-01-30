@@ -116,22 +116,142 @@ nav {
   animation: spin 1s linear infinite;
 }
 
+/*----------------- Skeleton Loader ------------------*/
+#skeleton-loader {
+  display: none; /* JS will show it */
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-color);
+  padding-top: 10vh; /* leave space for nav */
+}
+
+/* shimmer effect */
+.sk-nav, .sk-home .sk-img, .sk-home .sk-text .sk-line,
+.about-section .sk-img, .skills .sk-skill, .projects .sk-card,
+.contact .sk-form {
+  position: relative;
+  overflow: hidden;
+  background: #e0e0e0; /* skeleton grey */
+}
+
+.sk-nav {
+  width: 100%;
+  height: 58px; /* same as mobile nav height */
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.sk-home {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.sk-home .sk-img {
+  width: 40%;
+  min-width: 200px;
+  height: 300px;
+  border-radius: 8px;
+  background: #ddd;
+}
+
+.sk-home .sk-text {
+  width: 50%;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sk-home .sk-text .sk-line.big {
+  height: 35px;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.sk-home .sk-text .sk-line.medium {
+  height: 25px;
+  width: 60%;
+  border-radius: 5px;
+}
+
+.sk-home .sk-text .sk-line.small {
+  height: 20px;
+  width: 40%;
+  border-radius: 5px;
+}
+
+/* About section skeleton */
+.about-section .sk-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: #ddd;
+}
+
+.about-section .sk-text {
+  width: 60%;
+  height: 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  background: #ddd;
+}
+
+/* Skills skeleton */
+.skills .sk-skill {
+  width: 200px;
+  height: 100px;
+  border-radius: 12px;
+  background: #ddd;
+  margin: 15px;
+}
+
+/* Projects skeleton */
+.projects .sk-card {
+  width: 250px;
+  height: 210px;
+  border-radius: 12px;
+  background: #ddd;
+  margin: 15px;
+}
+
+/* Contact form skeleton */
+.contact .sk-form {
+  width: 600px;
+  height: 300px;
+  border-radius: 12px;
+  background: #ddd;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -500px 0; }
+  100% { background-position: 500px 0; }
+}
+
+.sk-nav, .sk-home .sk-img, .sk-home .sk-text .sk-line,
+.about-section .sk-img, .skills .sk-skill, .projects .sk-card,
+.contact .sk-form {
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,
+    #f0f0f0 50%,
+    #e0e0e0 75%
+  );
+  background-size: 500px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
-}
-
-/* SKELETON */
-#skeleton-loader {
-  display: none;
-  padding-top: 80px;
-}
-
-#skeleton-loader div {
-  background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 37%, #e0e0e0 63%);
-  background-size: 400% 100%;
-  animation: shimmer 1.4s infinite;
 }
 
 @keyframes shimmer {

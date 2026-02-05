@@ -22,9 +22,14 @@ body.dark {
   transition: background-color .4s ease, color .4s ease, transform .4s ease;
 }
 
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
 body {
+  width: 100%;
   max-width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   background: var(--bg-color);
   color: var(--text-color);
   transition: background 0.4s ease, color 0.4s ease;
@@ -233,7 +238,7 @@ nav {
 
 
 .nav-container {
-  max-width: 1200px;
+  width:100%;
   margin: auto;
   height: 100%;
   display: flex;
@@ -396,20 +401,26 @@ section {
 
 .main-container {
   width: 100%;
+  max-width:100%;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 60px;
+  overflow-x: hidden;
 }
 
 .main-container .image {
   z-index: -1;
   width: 50%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .main-container .image img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .main-container .content {
@@ -447,6 +458,7 @@ section {
   font-size: 1.5rem;
   transition: 0.2s linear;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .social-links i:hover {
@@ -1008,4 +1020,28 @@ footer .heart {
   height: 22px;
   border-radius: 50%;
   cursor: pointer;
+}
+/* remove hover on phone */
+@media (hover: hover) and (pointer: fine) {
+
+  .nav-container .links a:hover::after {
+    width: 100%;
+  }
+
+  .social-links i:hover {
+    transform: scale(1.2);
+    color: white;
+    background-color: var(--accent);
+  }
+
+  .project-card a:hover {
+    transform: scale(1.1);
+  }
+
+}
+
+@media (max-width: 768px) {
+  *:hover {
+    transform: none !important;
+  }
 }

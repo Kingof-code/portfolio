@@ -95,3 +95,11 @@ function applyTheme(variable, color) {
     loader.style.display = "none";
   }, 800);
 }
+
+/*remove right click*/
+document.addEventListener("contextmenu", function (e) {
+  const allowed = e.target.closest("input, textarea");
+  if (!allowed) {
+    e.preventDefault();
+  }
+});

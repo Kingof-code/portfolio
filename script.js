@@ -39,3 +39,59 @@ window.addEventListener("load", () => {
     mainContent.style.display = "block"; // show actual content
   }, 2000); // 2.2 seconds, adjust if needed
 });
+
+const accentIcon = document.getElementById("accentIcon");
+const buttonIcon = document.getElementById("buttonIcon");
+
+const accentColors = document.getElementById("accentColors");
+const buttonColors = document.getElementById("buttonColors");
+
+/* toggle lists */
+accentIcon.addEventListener("click", e => {
+  e.stopPropagation();
+  accentColors.classList.toggle("active");
+  buttonColors.classList.remove("active");
+});
+
+buttonIcon.addEventListener("click", e => {
+  e.stopPropagation();
+  buttonColors.classList.toggle("active");
+  accentColors.classList.remove("active");
+});
+
+/* apply colors */
+document.querySelectorAll("#accentColors span").forEach(c => {
+  c.style.background = c.dataset.color;
+  c.addEventListener("click", e => {
+    e.stopPropagation();
+    applyTheme("--accent", c.dataset.color);
+    accentColors.classList.remove("active"); // ✅ hide list
+  });
+});
+
+document.querySelectorAll("#buttonColors span").forEach(c => {
+  c.style.background = c.dataset.color;
+  c.addEventListener("click", e => {
+    e.stopPropagation();
+    applyTheme("--button", c.dataset.color);
+    buttonColors.classList.remove("active"); // ✅ hide list
+  });
+});
+
+/* click outside closes everything */
+document.addEventListener("click", () => {
+  accentColors.classList.remove("active");
+  buttonColors.classList.remove("active");
+});
+
+/* theme apply + loader */
+function applyTheme(variable, color) {
+  document.documentElement.style.setProperty(variable, color);
+
+  const loader = document.getElementById("page-loader");
+  loader.style.display = "flex";
+
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 800);
+}

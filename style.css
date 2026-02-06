@@ -25,6 +25,7 @@ body.dark {
 html {
   width: 100%;
   overflow-x: hidden;
+  background-color: var(--bg-color);
 }
 body {
   width: 100%;
@@ -395,14 +396,14 @@ nav {
 /*---------------------------For Home page-----------------------------------------*/
 
 section {
-  width: 100%;
+  width: auto;
   height: auto;
 }
 
 .main-container {
   width: 100%;
   max-width:100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -413,12 +414,13 @@ section {
 .main-container .image {
   z-index: -1;
   width: 50%;
+  height: auto;
   max-width: 100%;
   overflow: hidden;
 }
 
 .main-container .image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -504,26 +506,24 @@ section {
 /*---------------------------For About page-----------------------------------------*/
 
 .about-section {
-  background-color: transparent;
-  padding: 50px 0;
+  background-color: var(--bg-color);
   width: 100%;
   height: auto;
   overflow: hidden;
-  margin-top: 20px;
+  
 }
-
-.about-section h1 {
-  margin-top: 10px;
+.about-section h1{
+    text-align: center;
 }
 
 .about-content {
+  top: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
 }
 
 .about-image {
@@ -537,7 +537,7 @@ section {
   display:block;
   margin:0 auto;
   border-radius: 50%;
-  border: 2px solid #000;
+  border: 1px solid #000;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -561,6 +561,10 @@ section {
 
 
 /*---------------------------For Skill page-----------------------------------------*/
+
+.skills h1{
+    text-align: center;
+}
 
 .skills h3 {
   text-align: center;
@@ -770,6 +774,9 @@ footer {
   bottom: 0;
   width: 100%;
 }
+footer accent{
+    color: var(--accent);
+}
 
 footer .heart {
   color: red;
@@ -822,6 +829,7 @@ footer .heart {
   .theme-switch {
     margin-right: 45px;
     font-size: 1.4rem;
+    margin-right: 150px;
   }
 
   /* dropdown overlay */
@@ -902,7 +910,7 @@ footer .heart {
   }
 
   form {
-    width: 90%;
+    width: 70%;
   }
 }
 
@@ -922,7 +930,7 @@ footer .heart {
 
   .theme-switch {
     font-size: 1.3rem;
-    margin-right: 40px;
+    margin-right: 60px;
   }
 
   .dropdown a {
@@ -974,17 +982,15 @@ footer .heart {
   }
 
   form {
-    width: 100%;
+    width: 70%;
     padding: 15px;
   }
 }
-[data-aos] {
-  overflow-x: hidden;
-}
+
 
 .theme-panel {
   position: fixed;
-  top: 70px;
+  top: 80px;
   left: 15px;
   display: flex;
   flex-direction: column;
@@ -1099,12 +1105,16 @@ footer .heart {
     max-width: 250px;
     margin: 15px auto;
   }
-  .form{
-    width: 80%;
+  form{
+    width: 70%;
   }
-  .theme-switch,.hamburg {
+  .theme-switch{
     position: relative;
-    right: 0;
+    right: 80px;
+  }
+  .hamburg{
+    top: 20px;
+    right: 50px;
   }
 }
 
@@ -1125,7 +1135,10 @@ footer .heart {
   .home-content {
     padding: 0 30px;
   }
-  
+  .theme-switch{
+    position: relative;
+    right: 40px;
+  }
 }
 
 /* =========================

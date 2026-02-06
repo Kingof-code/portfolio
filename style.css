@@ -1045,3 +1045,92 @@ footer .heart {
     transform: none !important;
   }
 }
+
+/* =========================
+   MOBILE (up to 576px)
+========================= */
+@media (max-width: 576px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  header, nav {
+    padding: 10px 15px;
+  }
+
+  .home,
+  .hero,
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-img,
+  .home-img img {
+    width: 180px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .home-content {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .download-btn {
+    width: 100%;
+    max-width: 250px;
+    margin: 15px auto;
+  }
+}
+
+/* =========================
+   TABLET (577px – 768px)
+========================= */
+@media (min-width: 577px) and (max-width: 768px) {
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 220px;
+  }
+
+  .home-content {
+    padding: 0 30px;
+  }
+}
+
+/* =========================
+   LAPTOP (769px – 992px)
+========================= */
+@media (min-width: 769px) and (max-width: 992px) {
+
+  .home {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .profile-img {
+    width: 260px;
+  }
+}
+
+/* =========================
+   DESKTOP (993px and above)
+========================= */
+@media (min-width: 993px) {
+
+  .home {
+    max-width: 1200px;
+    margin: auto;
+  }
+}

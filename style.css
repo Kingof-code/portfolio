@@ -761,6 +761,24 @@ form button:hover {
   box-shadow: 0 0 40px var(--button);
 }
 
+#notify {
+  position: fixed;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.4s;
+  z-index: 9999;
+}
+
+#notify.show {
+  top: 20px;
+}
+
 /*-----------------------For Footer--------------------------*/
 
 footer {

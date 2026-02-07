@@ -103,3 +103,30 @@ document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
   }
 });
+
+const form = document.getElementById("contactForm");
+const notify = document.getElementById("notify");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault(); // page reload stop
+
+  fetch("https://sathishkumar6381306372.getform.com/4z3p7", {
+    method: "POST",
+    body: new FormData(form)
+  })
+  .then(() => {
+    // show notification
+    notify.classList.add("show");
+
+    // clear form
+    form.reset();
+
+    // hide notification after 3 sec
+    setTimeout(() => {
+      notify.classList.remove("show");
+    }, 3000);
+  })
+  .catch(() => {
+    alert("Something went wrong ❌");
+  });
+});

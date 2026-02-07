@@ -108,25 +108,19 @@ const form = document.getElementById("contactForm");
 const notify = document.getElementById("notify");
 
 form.addEventListener("submit", function (e) {
-  e.preventDefault(); // page reload stop
+  e.preventDefault();
 
   fetch("https://sathishkumar6381306372.getform.com/4z3p7", {
     method: "POST",
-    body: new FormData(form)
-  })
-  .then(() => {
-    // show notification
-    notify.classList.add("show");
-
-    // clear form
-    form.reset();
-
-    // hide notification after 3 sec
-    setTimeout(() => {
-      notify.classList.remove("show");
-    }, 3000);
-  })
-  .catch(() => {
-    alert("Something went wrong ❌");
+    body: new FormData(form),
+    mode: "no-cors"
   });
+
+  // success UI (assume sent)
+  notify.classList.add("show");
+  form.reset();
+
+  setTimeout(() => {
+    notify.classList.remove("show");
+  }, 3000);
 });

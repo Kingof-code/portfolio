@@ -448,7 +448,6 @@ section {
 .social-links {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 10px;
   margin-top: 15px;
 }
@@ -761,21 +760,21 @@ form button:hover {
   box-shadow: 0 0 40px var(--button);
 }
 
-#notify {
+#toast {
   position: fixed;
   top: -60px;
   left: 50%;
   transform: translateX(-50%);
   background: #4caf50;
-  color: white;
+  color: #fff;
   padding: 10px 20px;
   border-radius: 6px;
   font-size: 14px;
-  transition: 0.4s;
+  transition: 0.4s ease;
   z-index: 9999;
 }
 
-#notify.show {
+#toast.show {
   top: 20px;
 }
 

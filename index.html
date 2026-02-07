@@ -241,16 +241,18 @@
 <section id="contact" class="contact">
   <h2 data-aos="slide-left">Contact with Email</h2>
 
-  <form id="contactForm" action="https://sathishkumar6381306372.getform.com/0v2x8" method="POST" data-aos="fade-left">
-  <input type="text" name="name" placeholder="Your Name" required><br>
-  <input type="email" name="email" placeholder="Your Email" required><br>
-  <textarea name="message" placeholder="Your Message" rows="4" required></textarea><br>
-  <input type="hidden" name="_redirect" value="https://yourwebsite.com/thankyou.html">
-  <input type="hidden" name="_gotcha" style="display:none">
+  <form id="form" method="POST">
+  <input type="hidden" name="access_key" value="edf512bc-a9d7-4d70-a234-fa36e08f9f57">
+
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+
   <button type="submit">Send Message</button>
-  </form>
-  <!-- Notification -->
-<div id="notify">Message sent successfully ✅</div>
+</form>
+
+<!-- Toast -->
+<div id="toast">✅ Message sent successfully</div>
 
   <h3 data-aos="slide-left">Others Ways to contact Me</h3>
 

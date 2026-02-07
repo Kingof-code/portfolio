@@ -104,23 +104,39 @@ document.addEventListener("contextmenu", function (e) {
   }
 });
 
-const form = document.getElementById("contactForm");
-const notify = document.getElementById("notify");
+const form = document.getElementById("form");
+const toast = document.getElementById("toast");
+const submitBtn = form.querySelector("button");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+form.addEventListener("submit", async (e) => {e.preventDefault();
 
-  fetch("https://sathishkumar6381306372.getform.com/4z3p7", {
-    method: "POST",
-    body: new FormData(form),
-    mode: "no-cors"
-  });
+  submitBtn.textContent = "Sending...";
+  submitBtn.disabled = true;
 
-  // success UI (assume sent)
-  notify.classList.add("show");
-  form.reset();
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: new FormData(form)
+    });
 
-  setTimeout(() => {
-    notify.classList.remove("show");
-  }, 3000);
+    if (res.ok) {
+      toast.classList.add("show");
+      form.reset();
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+  } catch (err) {
+    toast.textContent = "❌ Failed to send";
+    toast.style.background = "#e53935";
+    toast.classList.add("show");
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3000);
+  } finally {
+    submitBtn.textContent = "Send Message";
+    submitBtn.disabled = false;
+  }
 });
